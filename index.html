@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title>Happy New Year</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Page entrance overlay -->
+    <div class="page-entrance"></div>
+
+    <!-- Happy New Year text - Curved Arc -->
+    <div class="happy-new-year-arc">
+      <svg viewBox="0 0 500 150" class="arc-text-svg">
+        <defs>
+          <path id="textArc" d="M 20,120 Q 250,20 480,120" fill="none" />
+          <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color: #ffd700" />
+            <stop offset="50%" style="stop-color: #fff5cc" />
+            <stop offset="100%" style="stop-color: #ffd700" />
+          </linearGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+            <feMerge>
+              <feMergeNode in="coloredBlur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+        <text class="arc-text-shadow">
+          <textPath href="#textArc" startOffset="50%" text-anchor="middle">
+            ✦ Happy New Year ✦
+          </textPath>
+        </text>
+        <text class="arc-text" filter="url(#glow)">
+          <textPath href="#textArc" startOffset="50%" text-anchor="middle">
+            ✦ Happy New Year ✦
+          </textPath>
+        </text>
+      </svg>
+    </div>
+
+    <!-- Image Modal Overlay -->
+    <div class="image-modal" id="imageModal">
+      <div class="modal-content">
+        <div class="frame-decoration">
+          <div class="frame-corner top-left"></div>
+          <div class="frame-corner top-right"></div>
+          <div class="frame-corner bottom-left"></div>
+          <div class="frame-corner bottom-right"></div>
+          <div class="frame-lights"></div>
+        </div>
+        <img id="modalImage" src="" alt="Gift Image" />
+        <button class="close-modal" id="closeModal">&times;</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Star -->
+      <svg class="star" viewBox="0 0 100 100">
+        <defs>
+          <linearGradient id="starGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color: #fff5cc; stop-opacity: 1" />
+            <stop offset="40%" style="stop-color: #ffd700; stop-opacity: 1" />
+            <stop offset="100%" style="stop-color: #ff9500; stop-opacity: 1" />
+          </linearGradient>
+        </defs>
+        <polygon
+          points="50,2 61,35 96,35 68,56 79,90 50,70 21,90 32,56 4,35 39,35"
+          fill="url(#starGradient)"
+          stroke="#e6a800"
+          stroke-width="1"
+        />
+      </svg>
+
+      <!-- Bottom Section - Largest (width 520) -->
+      <svg
+        class="tree-section bottom"
+        width="520"
+        height="200"
+        viewBox="0 0 520 200"
+      >
+        <defs>
+          <linearGradient id="bottomGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color: #3d8b37; stop-opacity: 1" />
+            <stop offset="100%" style="stop-color: #2d6b2a; stop-opacity: 1" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 260 0 
+             L 495 165 
+             Q 485 180 470 180
+             Q 455 165 440 180
+             Q 425 165 410 180
+             Q 395 165 380 180
+             Q 365 165 350 180
+             Q 335 165 320 180
+             Q 305 165 290 180
+             Q 275 165 260 180
+             Q 245 165 230 180
+             Q 215 165 200 180
+             Q 185 165 170 180
+             Q 155 165 140 180
+             Q 125 165 110 180
+             Q 95 165 80 180
+             Q 65 165 50 180
+             Q 35 165 25 165
+             Z"
+          fill="url(#bottomGradient)"
+          stroke="#2d6b2a"
+          stroke-width="2"
+        />
+      </svg>
+
+      <!-- Middle Section - Medium (width 380) -->
+      <svg
+        class="tree-section middle"
+        width="380"
+        height="190"
+        viewBox="0 0 380 190"
+      >
+        <defs>
+          <linearGradient id="middleGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color: #4a9f43; stop-opacity: 1" />
+            <stop offset="100%" style="stop-color: #3d8b37; stop-opacity: 1" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 190 0 
+             L 360 155 
+             Q 350 170 335 170
+             Q 320 155 305 170
+             Q 290 155 275 170
+             Q 260 155 245 170
+             Q 230 155 215 170
+             Q 200 155 185 170
+             Q 170 155 155 170
+             Q 140 155 125 170
+             Q 110 155 95 170
+             Q 80 155 65 170
+             Q 50 155 35 170
+             Q 20 155 20 155
+             Z"
+          fill="url(#middleGradient)"
+          stroke="#3d8b37"
+          stroke-width="2"
+        />
+      </svg>
+
+      <!-- Top Section - Smallest (width 240) -->
+      <svg
+        class="tree-section top"
+        width="240"
+        height="200"
+        viewBox="0 0 240 200"
+      >
+        <defs>
+          <linearGradient id="topGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color: #5cb354; stop-opacity: 1" />
+            <stop offset="100%" style="stop-color: #4a9f43; stop-opacity: 1" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 120 0 
+             L 225 165 
+             Q 215 180 200 180
+             Q 185 165 170 180
+             Q 155 165 140 180
+             Q 125 165 110 180
+             Q 95 165 80 180
+             Q 65 165 50 180
+             Q 35 165 20 180
+             Q 5 165 15 165
+             Z"
+          fill="url(#topGradient)"
+          stroke="#4a9f43"
+          stroke-width="2"
+        />
+      </svg>
+
+      <!-- Trunk -->
+      <svg class="trunk" width="60" height="80" viewBox="0 0 60 80">
+        <defs>
+          <linearGradient id="trunkGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color: #6b4423; stop-opacity: 1" />
+            <stop offset="50%" style="stop-color: #8b5a3c; stop-opacity: 1" />
+            <stop offset="100%" style="stop-color: #6b4423; stop-opacity: 1" />
+          </linearGradient>
+        </defs>
+        <rect
+          x="10"
+          y="0"
+          width="40"
+          height="80"
+          rx="4"
+          fill="url(#trunkGradient)"
+          stroke="#5a3a1e"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
